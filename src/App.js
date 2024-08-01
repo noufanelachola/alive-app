@@ -1,9 +1,12 @@
 import './App.css';
+import NavBar from "./Components/NavBar/NavBar";
+import Register from "./Components/Register/Register";
 
 function App() {
   return (
     <div className="App">
-      <h1>Hello</h1>
+      <NavBar/>
+      <Register/>
     </div>
   );
 }
