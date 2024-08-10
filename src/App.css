@@ -23,6 +23,10 @@
   color : var(--secondary-blue-color);
 }
 
+.color-white {
+  color: white;
+}
+
 /* Fonts */
 
 .iconName {
@@ -45,6 +49,11 @@
 }
 
 
+.font-weight-md {
+  font-weight: bold;
+}
+
+
 /* Buttons */
 .btn {
   cursor: pointer;
@@ -63,6 +72,17 @@ input {
   max-width: 40%;
   box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.3);
 }
+
+.inBtn {
+  padding: 0.8rem 0.25rem;
+  border-radius: 0.25rem;
+  width: 60%;  /* Sets the base width */
+  min-width: 20rem;  /* Sets the minimum width */
+  max-width: 40%;
+  border: none;
+  background-color: var(--primary-blue-color);
+}
+
 input:focus {
   outline: 2px solid var(--secondary-blue-color);
 }
