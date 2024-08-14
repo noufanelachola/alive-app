@@ -8,9 +8,9 @@ function LogIn({url,changeRoute}){
         password : ""
     });
 
-    // function to register
+    // function to LogIn
     const onLogIn = () => {
-        fetch(`${url}/login`,{
+        fetch(`${url}/register`,{
             method : "post",
             headers : {"Content-Type" : "application/json"},
             body : JSON.stringify(input)
