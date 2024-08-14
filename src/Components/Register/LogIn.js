@@ -16,10 +16,9 @@ function LogIn({url,changeRoute}){
             body : JSON.stringify(input)
         }).then(response => response.json())
         .then(username => {
-            if(username === input.username){
-                console.log("LoggedIn");
-            }
-        }).catch(error => console.log("Error"))
+            console.log(username);
+            
+        }).catch(error => console.log("Error : "+error));
         
         
     }

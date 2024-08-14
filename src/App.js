@@ -7,7 +7,7 @@ import LogIn from './Components/Register/LogIn';
 function App() {
 
   // url
-  const url = "http://localhost:3001";
+  const url = "http://localhost:3000";
 
   // Route to store the routes for pages
   const [route,setRoute] = useState("logIn");
