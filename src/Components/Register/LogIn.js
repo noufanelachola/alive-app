@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./Register.css"
 
-function LogIn({url,changeRoute}){
+function LogIn({url,changeRoute,setUser}){
     // State to store the input values
     const [input,setInput] = useState({
         username : "",
@@ -10,13 +10,18 @@ function LogIn({url,changeRoute}){
 
     // function to LogIn
     const onLogIn = () => {
-        fetch(`${url}/register`,{
+        fetch(`${url}/login`,{
             method : "post",
             headers : {"Content-Type" : "application/json"},
             body : JSON.stringify(input)
         }).then(response => response.json())
-        .then(username => {
-            console.log(username);
+        .then(user => {
+            console.log(user);
+            setUser(prevState => ({
+                ...prevState,
+                name : user.name,
+                username : user.username
+            }))
             
         }).catch(error => console.log("Error : "+error));
         

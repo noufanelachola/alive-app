@@ -28,11 +28,8 @@ function App() {
   return (
     <div className="App">
       <NavBar/>
-      {
-        route === "logIn"?
-          <LogIn url={url} changeRoute={changeRoute} /> :
-          <Register url={url} changeRoute={changeRoute} />
-      }
+      { route === "logIn" && <LogIn url={url} changeRoute={changeRoute} setUser={setUser} /> }
+      { route === "register" && <Register url={url} changeRoute={changeRoute} /> }
     </div>
   );
 }
