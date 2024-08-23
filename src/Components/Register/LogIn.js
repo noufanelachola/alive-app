@@ -21,7 +21,13 @@ function LogIn({url,changeRoute,setUser}){
                 ...prevState,
                 name : user.name,
                 username : user.username
-            }))
+            }));
+
+            // Set the input tags to empty
+            setInput({
+                username : "",
+                password : ""
+            });
             
         }).catch(error => console.log("Error : "+error));
         
