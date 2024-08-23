@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import './App.css';
 import NavBar from "./Components/NavBar/NavBar";
 import Register from "./Components/Register/Register";
@@ -19,11 +19,26 @@ function App() {
     status : ""
   })
 
+  // making setStatus to run after user name changes
+  useEffect(() => {
+    if (user.username) {
+      setStatus();
+    }
+  }, [user.username]);
+
   // function to change the route
   const changeRoute = (newRoute) => {
     setRoute(newRoute);
   }
 
+  // function to set the status user in state
+  const setStatus = () => {
+    fetch(`${url}/getStatus?username=${user.username}`)
+      .then(response => response.json())
+      .then(status => console.log(status))
+      .catch(error => console.log("Error fething status"));
+      
+  }
 
   return (
     <div className="App">
